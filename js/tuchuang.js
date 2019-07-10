@@ -76,6 +76,7 @@ function backS(){
 		for(var img in imgs){
 			ui.addImg(imgs[img]);
 		}
+		ui.changeSize();
 		$(window).resize(ui.changeSize);
 	});
 	this.removeImg=(url)=>{
