@@ -20,8 +20,6 @@
 		if(result=="rejected")notif(file.name+'违规，被拒绝');
 		else if(result=="failed")notif(file.name+'上传失败');
 		else{
-			imgs.push(result);
-			setImgs(imgs);
 			addImg(result);
 			notif(file.name+'上传成功');
 			changeSize();
@@ -157,6 +155,8 @@ function backS(){
 							console.log(file,domain+"/uploads/"+t.get("fname"));
 							uploading=false;
 							ui.rst(file,domain+"/uploads/"+t.get("fname"));
+							imgs.push(domain+"/uploads/"+t.get("fname"));
+							setImgs(imgs);
 						}
 					xhr.error = () =>
 						{
